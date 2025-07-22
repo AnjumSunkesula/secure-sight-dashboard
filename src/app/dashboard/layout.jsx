@@ -1,5 +1,10 @@
-import DashboardLayout from '../../components/DashboardLayout';
+import DashboardLayout from "@/components/DashboardLayout";
+import { IncidentProvider } from "@/context/IncidentContext";
 
 export default function Layout({ children }) {
-  return <DashboardLayout>{children}</DashboardLayout>;
+  return (
+    <IncidentProvider>
+      <DashboardLayout>{children}</DashboardLayout>
+    </IncidentProvider>
+  );
 }
