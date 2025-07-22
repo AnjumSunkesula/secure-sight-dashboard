@@ -10,7 +10,7 @@ export default function VideoPlayer() {
       ref={videoRef}
       controls
       className="rounded-md w-full"
-      src={`/${selectedIncident.videoUrl}`}
+      src={`/${selectedIncident?.videoUrl}`}
     />
   );
 }
