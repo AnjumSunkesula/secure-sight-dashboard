@@ -7,20 +7,21 @@ export default function IncidentList() {
 
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Incidents</h2>
-      <div className="space-y-2">
-        {incidents.map((incident) => (
-          <button
-            key={incident.id}
-            onClick={() => setSelectedIncident(incident)}
-            className="w-full bg-gray-100 dark:bg-gray-800 p-3 rounded hover:bg-gray-200 dark:hover:bg-gray-700 text-left transition"
-          >
-            <div className="font-semibold">{incident.label}</div>
-            <div className="text-sm text-gray-500">{new Date(incident.timestamp).toLocaleString()}</div>
-          </button>
-        ))}
-      </div>
+    <div className="space-y-3">
+      {incidents.map((incident) => (
+        <div
+          key={incident.id}
+          onClick={() => setSelectedIncident(incident)}
+          className="bg-[#112b4a] hover:bg-[#18365d] p-3 rounded cursor-pointer transition"
+        >
+          <img src={`/thumbnails/thumb-${incident.id}.jpg`} alt="" className="w-full h-28 object-cover rounded mb-2" />
+          <div className="text-sm font-semibold">{incident.label}</div>
+          <div className="text-xs text-gray-400">
+            {incident.location} • {new Date(incident.timestamp).toLocaleString()}
+          </div>
+          <button className="mt-2 text-xs text-yellow-400 hover:underline">Resolve</button>
+        </div>
+      ))}
     </div>
   );
 }
