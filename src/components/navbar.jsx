@@ -2,7 +2,7 @@
 
 export default function Navbar() {
   return (
-    <header className="h-16 flex items-center justify-between px-6 text-white">
+    <header className="h-16 flex items-center justify-between px-6 border-b border-gray-700 text-white">
       <div className="flex items-center gap-4">
         <span className="font-bold text-lg">MANDLACX</span>
       </div>
