@@ -1,5 +1,8 @@
 "use client";
 
+import { LayoutDashboard, Cctv, Settings, TriangleAlert, Users } from "lucide-react";
+
+
 export default function Navbar() {
   return (
     <header className="h-16 flex items-center justify-between px-6 border-b border-gray-700 text-white">
@@ -8,11 +11,21 @@ export default function Navbar() {
       </div>
       <div>
         <nav className="flex gap-6 ml-6 text-sm text-gray-300">
-          <a href="#">Dashboard</a>
-          <a href="#">Cameras</a>
-          <a href="#">Scenes</a>
-          <a href="#" className="font-bold text-white">Incidents</a>
-          <a href="#">Users</a>
+          <a href="#" className="flex items-center gap-2 hover:text-white">
+            <LayoutDashboard size={16} className="text-yellow-400"/> Dashboard
+          </a>
+          <a href="#" className="flex items-center gap-2 hover:text-white">
+            <Cctv size={16} /> Cameras
+          </a>
+          <a href="#" className="flex items-center gap-2 hover:text-white">
+            <Settings size={16} /> Scenes
+          </a>
+          <a href="#" className="flex items-center gap-2 text-white font-bold">
+            <TriangleAlert size={16} /> Incidents
+          </a>
+          <a href="#" className="flex items-center gap-2 hover:text-white">
+            <Users size={16} /> Users
+          </a>
         </nav>
       </div>
       <div className="flex items-center gap-2">
