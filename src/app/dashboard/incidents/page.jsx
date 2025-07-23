@@ -14,13 +14,13 @@ export default function IncidentsPage() {
     {/* Main section */}
     <div className="flex flex-1 overflow-hidden z-10">
       {/* Left Section: Video + Details */}
-      <div className="w-3/4 p-4 space-y-4 overflow-y-auto">
+      <div className="w-3/5 p-4 space-y-4 overflow-y-auto">
         <VideoPlayer />
         <IncidentDetails />
       </div>
 
       {/* Right Section: Incident List */}
-      <div className="w-1/4 border-l border-gray-700 p-4 overflow-y-auto">
+      <div className="w-2/5 border-l border-gray-700 p-4 overflow-y-auto">
         <h2 className="text-lg font-bold mb-4">15 Unresolved Incidents</h2>
         <IncidentList />
       </div>
