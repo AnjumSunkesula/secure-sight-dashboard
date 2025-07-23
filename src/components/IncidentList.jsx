@@ -7,20 +7,19 @@ export default function IncidentList() {
 
 
   return (
-    <div className="space-y-3">
+    <div className="space-y-5">
       {incidents.map((incident) => (
-        <div className="flex justify-between items-center">
+        <div key={incident.id}  className="flex justify-between items-center pr-5">
           <div className="flex space-x-3">
             <div 
-              key={incident.id}
               onClick={() => setSelectedIncident(incident)}
               className="rounded cursor-pointer"
             >
-              <img src={`/thumbnails/thumb-${incident.id}.png`} alt="" className="w-full h-28 object-cover rounded mb-2" />
+              <img src={`/thumbnails/thumb-${incident.id}.png`} alt="" className="w-full h-[80px] object-cover rounded"/>
             </div>
             <div className=" flex flex-col justify-between">
               <div className="text-sm font-semibold">{incident.label}</div>
-              <div className="text-xs text-gray-400 mb-2">
+              <div className="text-xs text-gray-400">
                 <div>{incident.location}</div>
                   <div>
                     {(() => {
@@ -49,8 +48,9 @@ export default function IncidentList() {
           </div>
 
 
-          <div>
-            <button className="mt-2 text-xs text-yellow-400 hover:underline">Resolve</button>
+          <div className="flex items-center space-x-2 text-xs text-yellow-400 hover:underline">
+            <div><button> Resolve </button></div>
+            <div>&gt;</div> 
           </div>
         </div>
       ))}
