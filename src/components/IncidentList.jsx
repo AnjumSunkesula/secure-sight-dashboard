@@ -47,11 +47,13 @@ export default function IncidentList() {
             </div>
           </div>
 
+          <button className="text-xs text-yellow-400 hover:underline cursor-pointer">
+            Resolve&nbsp;&nbsp;&nbsp;&gt;
+          </button>
 
-          <div className="flex items-center space-x-2 text-xs text-yellow-400 hover:underline">
-            <div><button> Resolve </button></div>
-            <div>&gt;</div> 
-          </div>
+          
+
+
         </div>
       ))}
     </div>
