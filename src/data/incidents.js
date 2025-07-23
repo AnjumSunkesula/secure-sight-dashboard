@@ -6,7 +6,8 @@ const incidents = [
     location: "Living Room",
     severity: "High",
     status: "Investigating",
-    videoUrl: "unauthorized-access.mp4"
+    videoUrl: "unauthorized-access.mp4",
+    duration: 29
   },
   {
     id: 2,
@@ -15,7 +16,8 @@ const incidents = [
     location: "Parking Lot",
     severity: "Medium",
     status: "Flagged",
-    videoUrl: "suspicious-movement.mp4"
+    videoUrl: "suspicious-movement.mp4",
+    duration: 29
   },
   {
     id: 3,
@@ -24,7 +26,8 @@ const incidents = [
     location: "Back Door",
     severity: "High",
     status: "Confirmed",
-    videoUrl: "forced-entry.mp4"
+    videoUrl: "forced-entry.mp4",
+    duration: 24
   },
   {
     id: 4,
@@ -33,7 +36,8 @@ const incidents = [
     location: "Lobby",
     severity: "Low",
     status: "Resolved",
-    videoUrl: "package-left.mp4"
+    videoUrl: "package-left.mp4",
+    duration: 8
   }
 ];
 
