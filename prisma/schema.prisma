@@ -29,4 +29,5 @@ model Incident {
   tsEnd      DateTime
   thumbnailUrl String
   resolved   Boolean  @default(false)
+  videoUrl     String 
 }
