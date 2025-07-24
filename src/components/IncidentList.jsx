@@ -1,11 +1,22 @@
 "use client";
+import { useState } from "react";
 import { useIncident } from "@/context/IncidentContext";
-import incidents from "@/data/incidents";
+import InitialIncidents from "@/data/incidents";
 import { DoorOpen, Clock, Cctv } from "lucide-react";
 
 export default function IncidentList() {
   const { setSelectedIncident } = useIncident();
+  const [incidents, setIncidents ] = useState(InitialIncidents);
 
+  const handleResolve = async (id) => {
+    // Optimistically remove from UI
+    setIncidents((prev) => prev.filter((incident) => incident.id !== id));
+
+    // API call to mark resolved
+    await fetch(`/api/incidents/${id}/resolve`, {
+      method: "PATCH",
+    });
+  };
 
   return (
     <div className="space-y-5">
@@ -61,7 +72,7 @@ export default function IncidentList() {
             </div>
           </div>
 
-          <button className="text-xs text-yellow-400 hover:underline cursor-pointer">
+          <button onClick={() => handleResolve(incident.id)} className="text-xs text-yellow-400 hover:underline cursor-pointer">
             Resolve&nbsp;&nbsp;&nbsp;&gt;
           </button>
 
