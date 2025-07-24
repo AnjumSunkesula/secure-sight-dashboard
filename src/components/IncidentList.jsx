@@ -42,7 +42,7 @@ export default function IncidentList() {
             >
               <img 
                 src={incident.thumbnailUrl} 
-                alt="" 
+                alt="Incident Thumbnail" 
                 className="w-full h-[80px] object-cover rounded"
               />
             </div>
