@@ -1,8 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useIncident } from "@/context/IncidentContext";
-// import InitialIncidents from "@/data/incidents";
-import { DoorOpen, Clock, Cctv } from "lucide-react";
+import { DoorOpen, Clock, Cctv, AlertCircle, ShieldOff, Package, HandCoins, Handshake, Bomb } from "lucide-react";
 
 export default function IncidentList() {
   const { setSelectedIncident } = useIncident();
@@ -31,6 +30,22 @@ export default function IncidentList() {
 
   if (loading) return <div className="text-sm text-gray-400">Loading incidents...</div>;
 
+  const typeIconMap = {
+    "Unauthorized Access": DoorOpen,
+    "Suspicious Activity": AlertCircle,
+    "Forced Entry": ShieldOff,
+    "Package Left": Package,
+    "Robbery": HandCoins,
+    "Scam": Handshake,
+    "Gun Threat": Bomb,
+  };
+
+  const getIconByType = (type) => {
+    const Icon = typeIconMap[type] || AlertCircle;
+    return <Icon className="w-4 h-4 text-red-400" />;
+  };
+
+
   return (
     <div className="space-y-5">
       {incidents.map((incident) => (
@@ -50,7 +65,7 @@ export default function IncidentList() {
             {/* Incident Info */}
             <div className=" flex flex-col justify-between">
               <div className="text-sm font-semibold flex gap-1">
-                <DoorOpen className="w-4 h-4 text-red-400"/>
+                {getIconByType(incident.type)}
                 {incident.type}
               </div>
 
@@ -93,5 +108,3 @@ export default function IncidentList() {
     </div>
   );
 }
-
-
