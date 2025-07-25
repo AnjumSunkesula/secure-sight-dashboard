@@ -1,7 +1,6 @@
 import VideoPlayer from "@/components/VideoPlayer";
 import IncidentList from "@/components/IncidentList";
 import Navbar from "@/components/navbar";
-import { TriangleAlert } from "lucide-react";
 
 
 export default function IncidentsPage() {
@@ -22,10 +21,6 @@ export default function IncidentsPage() {
 
         {/* Right Section: Incident List */}
         <div className="w-2/5  bg-zinc-900 m-4 p-4 rounded-md overflow-y-auto">
-          <h2 className="text-lg font-bold mb-4 flex gap-2">
-            <TriangleAlert className="text-red-600"/>
-            15 Unresolved Incidents
-          </h2>
           <IncidentList />
         </div>
       </div>
