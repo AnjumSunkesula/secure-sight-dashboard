@@ -100,7 +100,7 @@ export default function IncidentList() {
             </div>
           </div>
 
-          <button onClick={() => handleResolve(incident.id)} className="text-xs text-yellow-400 hover:underline cursor-pointer">
+          <button onClick={() => handleResolve(incident.id)} className="text-xs text-yellow-300 font-bold hover:underline cursor-pointer">
             Resolve&nbsp;&nbsp;&nbsp;&gt;
           </button>
         </div>
