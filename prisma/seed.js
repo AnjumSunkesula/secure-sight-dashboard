@@ -6,25 +6,25 @@ async function main() {
   const cameraA = await prisma.camera.create({
     data: {
       name: 'Shop Floor A',
-      location: 'First Floor - South Wing',
+      location: 'First Floor - Living Room',
     },
   });
 
   const cameraB = await prisma.camera.create({
     data: {
       name: 'Vault',
-      location: 'Basement - Vault Room',
+      location: 'Alleyway',
     },
   });
 
   const cameraC = await prisma.camera.create({
     data: {
       name: 'Entrance',
-      location: 'Main Gate',
+      location: 'Sururbs',
     },
   });
 
-  const types = ['Unauthorized Access', 'Gun Threat', 'Face Recognized'];
+  const types = ['Unauthorized Access', 'Suspicious Activity', 'Forced Entry', 'Package Left', 'Robbery', 'Scam', 'Gun Threat'];
   const now = new Date();
 
   // 2. Create Incidents
@@ -39,7 +39,7 @@ async function main() {
         tsStart: start,
         tsEnd: end,
         thumbnailUrl: `/thumbnails/thumb-${(i % 7) + 1}.png`,
-        videoUrl: `/videos/incident-${(i % 7) + 1 }.mp4`,
+        videoUrl: `/media/incident-${(i % 7) + 1 }.mp4`,
         camera: {
           connect: { id: camera.id },
         },
