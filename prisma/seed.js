@@ -27,6 +27,8 @@ async function main() {
   const types = ['Unauthorized Access', 'Suspicious Activity', 'Forced Entry', 'Package Left', 'Robbery', 'Scam', 'Gun Threat'];
   const now = new Date();
 
+  await prisma.incident.deleteMany();
+
   // 2. Create Incidents
   for (let i = 0; i < 15; i++) {
     const start = new Date(now.getTime() - i * 60 * 60 * 1000); // each incident an hour apart
@@ -40,6 +42,7 @@ async function main() {
         tsEnd: end,
         thumbnailUrl: `/thumbnails/thumb-${(i % 7) + 1}.png`,
         videoUrl: `/media/incident-${(i % 7) + 1 }.mp4`,
+        resolved: false,
         camera: {
           connect: { id: camera.id },
         },
