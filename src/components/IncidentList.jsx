@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useIncident } from "@/context/IncidentContext";
-import { TriangleAlert, CheckCheck, DoorOpen, Clock, Cctv, AlertCircle, ShieldOff, Package, HandCoins, Handshake, Bomb } from "lucide-react";
+import { TriangleAlert, CheckCheck, DoorOpen, Clock, Cctv, AlertCircle, ShieldOff, Package, HandCoins, Handshake, Bomb, UserSearch, Plus } from "lucide-react";
 
 export default function IncidentList() {
   const { setSelectedIncident } = useIncident();
@@ -58,22 +58,45 @@ export default function IncidentList() {
     <div>
       {/* Header with toggle */}
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-lg font-bold flex gap-2">
-          <TriangleAlert className="text-red-600" />
-          {filteredIncidents.length} {filter === "unresolved" ? "Unresolved" : "Resolved"} Incidents
-        </h2>
+        <div>
+          <h2 className="text-lg font-bold flex gap-2">
+            <TriangleAlert className="text-red-600" />
+            {filteredIncidents.length} {filter === "unresolved" ? "Unresolved" : "Resolved"} Incidents
+          </h2>
+        </div>
 
         {filter === "unresolved" ? (
           <>
-            <div className="flex gap-1 border-1 border-gray-500 rounded-2xl cursor-pointer py-0.5 px-2 items-center bg-black text-white">
-              <div className="text-green-400"><CheckCheck size={18}/></div>
-              <div className="text-xs">
-                <button
-                  onClick={() => setFilter("resolved")}
-                  className="hover:text-green-400 cursor-pointer"
-                >
-                  {resolvedCount} resolved incidents
-                </button>
+            <div className="flex gap-1">
+              <div className="relative flex items-center">
+                <DoorOpen
+                  className=" w-5 h-5 text-orange-500  cursor-not-allowed  rounded-full p-1 bg-yellow-950 relative z-10"
+                  title="Access"
+                />
+
+                <Plus
+                  className="-ml-1 w-5 h-5 text-red-500  cursor-not-allowed  rounded-full p-1 bg-red-950 relative z-20"
+                  title="Add"
+                />
+
+                <UserSearch
+                  className="-ml-1 w-5 h-5 text-blue-500  cursor-not-allowed rounded-full p-1 bg-indigo-950 relative z-30"
+                  title="Search User"
+                />
+
+                
+              </div>
+
+              <div className="flex gap-1 border-1 border-gray-500 rounded-2xl cursor-pointer py-0.5 px-2 items-center bg-black text-white">
+                <div className="text-green-400"><CheckCheck size={18}/></div>
+                <div className="text-xs">
+                  <button
+                    onClick={() => setFilter("resolved")}
+                    className="hover:text-green-400 cursor-pointer"
+                  >
+                    {resolvedCount} resolved incidents
+                  </button>
+                </div>
               </div>
             </div>
           </>
