@@ -7,10 +7,10 @@ export default function Navbar() {
   return (
     <header className="h-16 flex items-center justify-between px-6 border-b border-gray-700 text-white">
       <div className="flex items-center gap-4">
-        <span className="font-bold text-lg">MANDLACX</span>
+        <span className="text-lg">MANDLAC<span className="font-bold">X</span></span>
       </div>
       <div>
-        <nav className="flex gap-6 ml-6 text-sm text-gray-300">
+        <nav className="flex gap-6 ml-6 text-sm text-gray-300 nav">
           <a href="#" className="flex items-center gap-2 cursor-not-allowed hover:text-white">
             <LayoutDashboard size={16} className="text-yellow-400"/> Dashboard
           </a>
@@ -33,12 +33,12 @@ export default function Navbar() {
           <img
             src="/user.jpg"
             alt="User"
-            className="w-8 h-8 rounded-full border border-white"
+            className="w-8 h-8 rounded-full border border-white img"
           />
         </div>
         <div>
-          <span>Mohammed Ajhas</span>
-          <div className="text-xs text-gray-400">ajhas@mandlac.com</div>
+          <span className="user-name">Mohammed Ajhas</span>
+          <div className="text-xs text-gray-400 user-mail">ajhas@mandlac.com</div>
         </div>
         <div className="cursor-not-allowed"><ChevronDown /> </div>
       </div>
