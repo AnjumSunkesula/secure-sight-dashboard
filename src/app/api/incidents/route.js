@@ -23,5 +23,7 @@ export async function GET(req) {
       JSON.stringify({ error: "Internal Server Error", details: error.message }),
       { status: 500, headers: { "Content-Type": "application/json" } }
     );
+  } finally {
+    await prisma.$disconnect();
   }
 }
