@@ -11,14 +11,29 @@ export default function IncidentList() {
 
   useEffect(() => {
     async function fetchIncidents() {
-      const res = await fetch("/api/incidents?resolved=false");
-      const data = await res.json();
-      setIncidents(data);
-      setLoading(false);
+      try {
+        const res = await fetch("/api/incidents?resolved=false");
+
+        if (!res.ok) {
+          // If status is 500 or anything else, log and exit
+          const errorText = await res.text(); // read raw error response
+          console.error("Failed to fetch incidents:", res.status, errorText);
+          setLoading(false);
+          return;
+        }
+
+        const data = await res.json();
+        setIncidents(data);
+      } catch (err) {
+        console.error("Network or parsing error:", err);
+      } finally {
+        setLoading(false);
+      }
     }
 
     fetchIncidents();
   }, []);
+
 
   const handleResolve = async (id) => {
     console.log("Resolving incident with ID:", id); 
