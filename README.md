@@ -15,16 +15,16 @@
 🚀 Deployment Instructions
   Note: Due to a Prisma client build issue on Vercel, the project is not fully functional when deployed. Please run it locally to test all features.
 
-  #Local Setup
+  Local Setup:
   git clone https://github.com/your-username/secure-sight-dashboard.git
   cd secure-sight-dashboard
   npm install
   
-  # Pull database schema and generate Prisma client
+  Pull database schema and generate Prisma client:
   npx prisma db pull
   npx prisma generate
   
-  # Start the development server
+  Start the development server:
   npm run dev
   Make sure to create a .env file and add your DATABASE_URL: DATABASE_URL="your_postgres_connection_string"
 
