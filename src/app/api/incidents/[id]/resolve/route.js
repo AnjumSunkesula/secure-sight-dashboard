@@ -1,8 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
 
 export async function PATCH(req, { params }) {
+  const prisma = new PrismaClient();
+
   const id = parseInt(params.id);
 
   const updated = await prisma.incident.update({
