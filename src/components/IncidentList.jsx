@@ -112,7 +112,7 @@ export default function IncidentList() {
 
       <div className="space-y-5">
         {filteredIncidents.map((incident) => (
-          <div key={incident.id}  className="flex justify-between items-center pr-5">
+          <div key={incident.id}  className="flex justify-between items-center pr-5 lists">
             <div className="flex space-x-3">
               <div 
                 onClick={() => setSelectedIncident(incident)}
