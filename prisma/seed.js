@@ -41,7 +41,7 @@ async function main() {
         tsStart: start,
         tsEnd: end,
         thumbnailUrl: `/thumbnails/thumb-${(i % 7) + 1}.png`,
-        videoUrl: `/media/incident-${(i % 7) + 1 }.mp4`,
+        videoUrl: `/videos/incident-${(i % 7) + 1 }.mp4`,
         resolved: false,
         camera: {
           connect: { id: camera.id },
