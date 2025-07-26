@@ -1,8 +1,9 @@
 import { PrismaClient } from "@prisma/client";
 
-const prisma = new PrismaClient();
 
 export async function GET(req) {
+  const prisma = new PrismaClient();
+
   const { searchParams } = new URL(req.url);
   const resolved = searchParams.get("resolved") === "true";
 
