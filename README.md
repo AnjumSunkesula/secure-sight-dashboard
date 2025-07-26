@@ -1,36 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🧠 Tech Stack & Decisions
+  Framework: [Next.js 15 (App Router)] – selected for its full-stack capabilities and optimized routing.
+  
+  Database: [PostgreSQL] – hosted on [Neon.tech] for modern, serverless Postgres support.
+  
+  ORM: [Prisma] – chosen for type safety and easy schema migrations.
+  
+  UI Library: TailwindCSS – used for utility-first styling and rapid UI development.
+  
+  Video Player: <video> HTML5 tag – chosen for simplicity and native support.
+  
+  Hosting: [Vercel] – preferred for its tight integration with Next.js and easy CI/CD setup.
+  
 
-## Getting Started
+🚀 Deployment Instructions
+  Note: Due to a Prisma client build issue on Vercel, the project is not fully functional when deployed. Please run it locally to test all features.
 
-First, run the development server:
+  #Local Setup
+  git clone https://github.com/your-username/secure-sight-dashboard.git
+  cd secure-sight-dashboard
+  npm install
+  
+  # Pull database schema and generate Prisma client
+  npx prisma db pull
+  npx prisma generate
+  
+  # Start the development server
+  npm run dev
+  Make sure to create a .env file and add your DATABASE_URL: DATABASE_URL="your_postgres_connection_string"
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+  
+🛠️ If I Had More Time…
+   =>Fix Prisma client generation during Vercel build using vercel.json and build hooks.
+  
+   =>Add proper loading states and error messages for API calls.
+  
+   =>Implement authentication (admin login to resolve incidents).
+  
+   =>Add video playback enhancements (e.g., scrubber, fullscreen toggle).
